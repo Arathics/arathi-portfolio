@@ -247,11 +247,44 @@ a:hover {
     background-color: var(--bs-pagination-active-bg);
     border-color: var(--bs-pagination-active-border-color);
 }
-
+/* Portfolio Logo in Footer */
 .portfolio-logo {
-  color: white;            /* White text */
-  font-weight: bold;        /* Bold */
-  font-size: 2.5rem;        /* Adjust size to fit the space */
-  font-family: 'Segoe UI', 'Roboto', sans-serif;  /* Clean professional font */
-  letter-spacing: 1px;      /* Optional: slight spacing for style */
+  color: white;                /* White text */
+  font-weight: bold;           /* Bold letters */
+  font-size: 2.5rem;           /* Adjust size to fit footer space */
+  font-family: 'Segoe UI', 'Roboto', sans-serif; /* Clean, professional font */
+  letter-spacing: 1px;         /* Slight spacing for style */
+  margin-bottom: 1rem;         /* Space below logo */
+}
+
+/* Social links styling */
+.social-links a {
+  display: inline-block;
+  margin: 0 8px;
+  color: white;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: #ffd700;             /* Optional hover color */
+  transform: scale(1.2);
+}
+
+/* Footer paragraph and email styling */
+#footer p, #footer h3 a {
+  color: white;
+}
+
+#footer .info-box p {
+  font-size: 0.95rem;
+}
+
+/* Center everything nicely on smaller screens */
+@media (max-width: 767px) {
+  .info-box {
+    text-align: center;
+  }
+  .social-links {
+    margin-top: 1rem;
+  }
 }
