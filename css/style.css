@@ -247,3 +247,11 @@ a:hover {
     background-color: var(--bs-pagination-active-bg);
     border-color: var(--bs-pagination-active-border-color);
 }
+
+.portfolio-logo {
+  color: white;            /* White text */
+  font-weight: bold;        /* Bold */
+  font-size: 2.5rem;        /* Adjust size to fit the space */
+  font-family: 'Segoe UI', 'Roboto', sans-serif;  /* Clean professional font */
+  letter-spacing: 1px;      /* Optional: slight spacing for style */
+}
