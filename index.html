@@ -2,417 +2,1212 @@
 <html lang="en">
 
 <head>
-  <title>Arathi Pradeep | AI & Research Engineer</title>
+  <title>Arathi</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
   <link rel="stylesheet" href="css/lightbox.min.css">
 
-  <style>
-    :root {
-      --bg: #020408;
-      --card: #0a0c10;
-      --accent: #3b82f6;
-      --accent-secondary: #60a5fa;
-      --glass: rgba(255, 255, 255, 0.02);
-      --glass-border: rgba(255, 255, 255, 0.08);
-      --text: #f8fafc;
-      --text-dim: #94a3b8;
-    }
+  <link rel="stylesheet" href="css/style.css">
 
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: 'Work Sans', sans-serif;
-      overflow-x: hidden;
-    }
 
-    h1, h2, h3, .navbar-brand { font-family: 'Space Grotesk', sans-serif; }
-
-    /* Custom Cursor Glow */
-    .cursor-glow {
-      position: fixed;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.07) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 0;
-      transform: translate(-50%, -50%);
-    }
-
-    /* Hero Animation */
-    .hero-img-container {
-      position: relative;
-      perspective: 1000px;
-    }
-
-    .hero-img-main {
-      border-radius: 3rem;
-      border: 1px solid var(--glass-border);
-      box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
-      transition: transform 0.6s ease-out;
-      transform: rotateY(-10deg) rotateX(5deg);
-    }
-
-    .hero-img-container:hover .hero-img-main {
-      transform: rotateY(0deg) rotateX(0deg) scale(1.02);
-    }
-
-    /* Floating Badges */
-    .floating-badge {
-      position: absolute;
-      background: rgba(13, 17, 23, 0.8);
-      backdrop-filter: blur(10px);
-      padding: 1rem;
-      border-radius: 1rem;
-      border: 1px solid var(--glass-border);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      animation: floating 3s ease-in-out infinite;
-    }
-
-    @keyframes floating {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
-    }
-
-    /* Bento Styling */
-    .bento-card {
-      background: var(--card);
-      border: 1px solid var(--glass-border);
-      border-radius: 2rem;
-      transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .bento-card:hover {
-      border-color: var(--accent);
-      background: rgba(59, 130, 246, 0.03);
-    }
-
-    /* Education Vertical Line */
-    .edu-line {
-      border-left: 2px dashed var(--accent);
-      margin-left: 20px;
-      padding-left: 30px;
-      position: relative;
-    }
-
-    .edu-dot {
-      position: absolute;
-      left: -9px; top: 0;
-      width: 16px; height: 16px;
-      background: var(--accent);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--accent);
-    }
-
-    /* Portfolio Matrix */
-    .matrix-card {
-      background: #0d1117;
-      border: 1px solid #21262d;
-      border-radius: 1.5rem;
-      transition: 0.3s;
-    }
-
-    .matrix-card:hover {
-      background: #161b22;
-      border-color: #8b949e;
-    }
-
-    .filter-pill {
-      background: transparent;
-      border: 1px solid #30363d;
-      color: var(--text-dim);
-      padding: 8px 24px;
-      border-radius: 100px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      transition: 0.3s;
-    }
-
-    .filter-pill.active {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-
-    .contact-input {
-      background: rgba(255,255,255,0.02) !important;
-      border: 1px solid #30363d !important;
-      border-radius: 1rem !important;
-      color: white !important;
-      padding: 1rem !important;
-    }
-
-    .contact-input:focus {
-      border-color: var(--accent) !important;
-      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
-    }
-  </style>
 </head>
 
 <body>
-  <div class="cursor-glow" id="glow"></div>
+  <svg>
+    <symbol id="whatsapp" viewBox="0 0 24 24">
+        <path fill="currentColor"
+            d="M16.6 14c-.2-.1-1.5-.7-1.7-.8c-.2-.1-.4-.1-.6.1c-.2.2-.6.8-.8 1c-.1.2-.3.2-.5.1c-.7-.3-1.4-.7-2-1.2c-.5-.5-1-1.1-1.4-1.7c-.1-.2 0-.4.1-.5c.1-.1.2-.3.4-.4c.1-.1.2-.3.2-.4c.1-.1.1-.3 0-.4c-.1-.1-.6-1.3-.8-1.8c-.1-.7-.3-.7-.5-.7h-.5c-.2 0-.5.2-.6.3c-.6.6-.9 1.3-.9 2.1c.1.9.4 1.8 1 2.6c1.1 1.6 2.5 2.9 4.2 3.7c.5.2.9.4 1.4.5c.5.2 1 .2 1.6.1c.7-.1 1.3-.6 1.7-1.2c.2-.4.2-.8.1-1.2zm2.5-9.1C15.2 1 8.9 1 5 4.9c-3.2 3.2-3.8 8.1-1.6 12L2 22l5.3-1.4c1.5.8 3.1 1.2 4.7 1.2c5.5 0 9.9-4.4 9.9-9.9c.1-2.6-1-5.1-2.8-7m-2.7 14c-1.3.8-2.8 1.3-4.4 1.3c-1.5 0-2.9-.4-4.2-1.1l-.3-.2l-3.1.8l.8-3l-.2-.3c-2.4-4-1.2-9 2.7-11.5S16.6 3.7 19 7.5c2.4 3.9 1.3 9-2.6 11.4" />
+    </symbol>
+    <symbol id="github" viewBox="0 0 24 24">
+        <path fill="currentColor"
+            d="M10.07 20.503a1 1 0 0 0-1.18-.983c-1.31.24-2.963.276-3.402-.958a5.708 5.708 0 0 0-1.837-2.415a1.2 1.2 0 0 1-.167-.11a1 1 0 0 0-.93-.645h-.005a1 1 0 0 0-1 .995c-.004.815.81 1.338 1.141 1.514a4.44 4.44 0 0 1 .924 1.36c.365 1.023 1.423 2.576 4.466 2.376l.003.098l.004.268a1 1 0 0 0 2 0l-.005-.318c-.005-.19-.012-.464-.012-1.182M20.737 5.377a5.39 5.39 0 0 0 .09-.42a6.278 6.278 0 0 0-.408-3.293a1.002 1.002 0 0 0-.615-.58c-.356-.12-1.67-.357-4.184 1.25a13.87 13.87 0 0 0-6.354 0C6.762.75 5.455.966 5.102 1.079a.997.997 0 0 0-.631.584a6.3 6.3 0 0 0-.404 3.357c.025.127.051.246.079.354a6.27 6.27 0 0 0-1.256 3.83a8.422 8.422 0 0 0 .043.921c.334 4.603 3.334 5.984 5.424 6.459a4.591 4.591 0 0 0-.118.4a1 1 0 0 0 1.942.479a1.678 1.678 0 0 1 .468-.878a1 1 0 0 0-.546-1.745c-3.454-.395-4.954-1.802-5.18-4.899a6.61 6.61 0 0 1-.033-.738a4.258 4.258 0 0 1 .92-2.713a3.022 3.022 0 0 1 .195-.231a1 1 0 0 0 .188-1.025a3.388 3.388 0 0 1-.155-.555a4.094 4.094 0 0 1 .079-1.616a7.543 7.543 0 0 1 2.415 1.18a1.009 1.009 0 0 0 .827.133a11.777 11.777 0 0 1 6.173.001a1.005 1.005 0 0 0 .83-.138a7.572 7.572 0 0 1 2.406-1.19a4.04 4.04 0 0 1 .087 1.578a3.205 3.205 0 0 1-.169.607a1 1 0 0 0 .188 1.025c.078.087.155.18.224.268A4.122 4.122 0 0 1 20 9.203a7.039 7.039 0 0 1-.038.777c-.22 3.056-1.725 4.464-5.195 4.86a1 1 0 0 0-.546 1.746a1.63 1.63 0 0 1 .466.908a3.06 3.06 0 0 1 .093.82v2.333c-.01.648-.01 1.133-.01 1.356a1 1 0 1 0 2 0c0-.217 0-.692.01-1.34v-2.35a4.882 4.882 0 0 0-.155-1.311a4.256 4.256 0 0 0-.116-.416a6.513 6.513 0 0 0 5.445-6.424A8.697 8.697 0 0 0 22 9.203a6.13 6.13 0 0 0-1.263-3.826" />
+    </symbol>
+    <symbol id="mail" viewBox="0 0 24 24">
+        <path fill="currentColor"
+            d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m-8 7L4 6h16zm8 7H4V8l8 5l8-5Z" />
+    </symbol>
+    <symbol id="linkedin" viewBox="0 0 24 24">
+        <path fill="currentColor"
+            d="M20 22h-4v-7a2.5 2.5 0 0 0-5 0v7H7V9h4v1.5a4.2 4.2 0 0 1 3.5-2C16.8 8.5 20 9.7 20 14.5ZM5.5 7.5C4.6 7.5 4 6.9 4 6c0-.9.6-1.5 1.5-1.5s1.5.6 1.5 1.5c0 .9-.6 1.5-1.5 1.5ZM20 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2" />
+    </symbol>
+    <symbol id="menu" viewBox="0 0 24 24">
+        <path fill="black"
+            d="M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m0 12a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m7-7a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2z" />
+    </symbol>
+</svg>
 
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-4 bg-black bg-opacity-75" style="backdrop-filter: blur(20px);">
-    <div class="container">
-      <a class="navbar-brand fw-black fs-2" href="#">ARATHI<span class="text-primary">.</span></a>
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navLink">
-        <i class="bi bi-distribute-vertical text-primary fs-1"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navLink">
-        <ul class="navbar-nav ms-auto gap-lg-4 fw-medium">
-          <li class="nav-item"><a class="nav-link" href="#about">The Researcher</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Project Matrix</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item">
-            <a href="https://linkedin.com/in/arathi-pradeep-44b394229" class="btn btn-primary rounded-pill px-4">LinkedIn</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<header id="top" class="position-sticky top-0 start-0" style="z-index:10;">
+    <nav class="navbar bg-white fixed-top">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center g-4">
+                <a class="navbar-brand d-flex" href="index.html">
+                    <h2 class="m-0 fw-bold text-black" style="font-size: 2rem;">
+                        Arathi
+                    </h2>
+                </a>
+                
+                <div class="icon px-5 d-flex gap-3 align-items-center">
 
-  <section class="min-vh-100 d-flex align-items-center" id="about">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1500">
-          <div class="d-flex align-items-center gap-3 mb-4">
-            <span class="h6 text-primary fw-bold mb-0 ls-4">AI ENGINEER</span>
-            <div class="vr bg-primary opacity-50" style="height: 20px;"></div>
-            <span class="small text-dim">B.Tech Graduate 2025</span>
-          </div>
-          <h1 class="display-1 fw-black mb-4">Solving Urban <br><span class="text-gradient">Challenges.</span></h1>
-          <p class="lead text-dim fs-4 mb-5">
-            Developing high-accuracy reinforcement learning models and intelligent GIS frameworks to optimize modern infrastructure.
-          </p>
-          <div class="d-flex gap-4">
-            <a href="#portfolio" class="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow-lg">View Catalog</a>
-            <a href="https://github.com/Arathics" target="_blank" class="btn btn-outline-light btn-lg rounded-pill px-4 py-3"><i class="bi bi-github me-2"></i>GitHub</a>
-          </div>
+                    <a href="https://wa.me/919778224700" target="_blank" class="text-decoration-none" title="WhatsApp">
+                        <svg class="whatsapp text-black" width="24" height="24">
+                            <use xlink:href="#whatsapp"></use>
+                        </svg>
+                    </a>
+
+                    <a href="https://linkedin.com/in/arathi-pradeep-44b394229" target="_blank" class="text-decoration-none" title="LinkedIn">
+                        <svg class="linkedin text-black" width="24" height="24">
+                            <use xlink:href="#linkedin"></use>
+                        </svg>
+                    </a>
+
+                    <a href="https://github.com/Arathics" target="_blank" class="text-decoration-none" title="GitHub (Arathics)">
+                        <svg class="github text-black" width="24" height="24">
+                            <use xlink:href="#github"></use>
+                        </svg>
+                    </a>
+
+                    <a href="mailto:arathipradeep02@gmail.com" class="text-decoration-none" title="Email: arathipradeep02@gmail.com">
+                         <svg class="mail text-black" width="24" height="24">
+                            <use xlink:href="#mail"></use>
+                        </svg>
+                    </a>
+                </div>
+                </div>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navabar-toggler-icon">
+                    <svg class="text-primary menu" width="32" height="32">
+                        <use xlink:href="#menu"></use>
+                    </svg>
+                </span>
+            </button>
+            <div class="offcanvas offcanvas-end text-white bg-black" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close btn-close-white ms-3" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav flex-grow-1 p-4">
+                        <li class="nav-item">
+                            <a class="nav-link active text-uppercase ls-4 text-white" aria-current="page"
+                                href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase ls-4 text-white" aria-current="page"
+                                href="index.html">Portfolio
+                            </a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase ls-4 text-white" aria-current="page"
+                                href="index.html">Single Portfolio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase ls-4 text-white" aria-current="page"
+                                href="index.html">Single Post
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase ls-4 text-white" aria-current="page"
+                                href="index.html">Styles
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase ls-4 text-white" aria-current="page"
+                                href="index.html">Blog
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase ls-4 text-white" aria-current="page"
+                                href="index.html">Team
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase ls-4 text-white" aria-current="page"
+                                href="index.html">Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-6" data-aos="zoom-in-left" data-aos-duration="1500">
-          <div class="hero-img-container">
-            <img src="images/banner1.png" class="img-fluid hero-img-main" alt="Arathi Pradeep">
-            <div class="floating-badge d-none d-md-block" style="top: 10%; right: -5%; animation-delay: 0s;">
-              <i class="bi bi-cpu text-primary me-2"></i> <span class="fw-bold">Reinforcement Learning</span>
-            </div>
-            <div class="floating-badge d-none d-md-block" style="bottom: 20%; left: -10%; animation-delay: 1.5s;">
-              <i class="bi bi-geo-alt text-success me-2"></i> <span class="fw-bold">GIS Optimization</span>
-            </div>
+    </nav>
+</header>
+  <section>
+    <div class="container">
+      <div class="banner rounded-4 p-5"
+        style="background-image: url(images/banner1.png); background-size: cover ; background-repeat: no-repeat; background-position: center;">
+        <div class="text-content text-white py-5 my-5">
+          <p class="fs-4">
+            CSE Graduate / ML & AI Enthusisast
+          </p>
+          <h1 class="display-1">
+            Arathi <br> Pradeep
+          </h1>
+        </div>
+        <div class="row text-uppercase bg-black rounded-4 p-3 mt-5">
+  <div class="col-md-3">
+    <div class="d-flex align-items-center gap-4">
+      <h2 class="display-2 text-light">
+        4+
+      </h2>
+      <p class="text-light-emphasis m-0 ls-4">
+        Academic <br> projects
+      </p>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="d-flex align-items-center gap-4">
+      <h2 class="display-2 text-light">
+        1
+      </h2>
+      <p class="text-light-emphasis m-0 ls-4">
+        Industry <br> internship
+      </p>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="d-flex align-items-center gap-4">
+      <h2 class="display-2 text-light">
+        10+
+      </h2>
+      <p class="text-light-emphasis m-0 ls-4">
+        Technical <br> skills
+      </p>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="d-flex align-items-center gap-4">
+      <h2 class="display-2 text-light">
+        1
+      </h2>
+      <p class="text-light-emphasis m-0 ls-4">
+        Major <br> research publication
+      </p>
+    </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-5" id="education">
-    <div class="container">
-      <h2 class="display-4 fw-bold mb-5" data-aos="fade-up">Academic <span class="text-primary">Background</span></h2>
-      <div class="row g-4">
+  <section class="p-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      
+      <div class="col-lg-3">
+        <div class="d-flex gap-4 align-items-start">
+          <div class="icon">
+            <svg class="text-primary monitor" width="50" height="50">
+              <use xlink:href="#monitor"></use>
+            </svg>
+          </div>
+          <div class="text-md-start">
+            <h5>
+              Software Development
+            </h5>
+            <p class="postf">
+              Building efficient, scalable applications using Python, Java, and modern frameworks.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3">
+        <div class="d-flex gap-4 align-items-start">
+          <div class="icon">
+            <svg class="text-primary notes" width="50" height="50">
+              <use xlink:href="#notes"></use>
+            </svg>
+          </div>
+          <div class="text-md-start">
+            <h5>
+              Data Science & ML
+            </h5>
+            <p class="postf">
+              Applying machine learning and data analysis to solve real-world problems.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3">
+        <div class="d-flex gap-4 align-items-start">
+          <div class="icon">
+            <svg class="text-primary laptop" width="50" height="50">
+              <use xlink:href="#laptop"></use>
+            </svg>
+          </div>
+          <div class="text-md-start">
+            <h5>
+              Research & Optimization
+            </h5>
+            <p class="postf">
+              Academic project work focused on traffic, energy optimization, and intelligent systems.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <section>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-4">
+        <div class="h-100 bg-yellow p-4 rounded-4">
+          <h3>Education</h3>
+
+          <div class="py-4">
+            <p class="text-dark-emphasis">
+              2021 – 2025
+            </p>
+            <h5>
+              B.Tech in Computer Science and Engineering
+            </h5>
+            <p class="text-dark-emphasis">
+              Government College of Engineering, Kannur <br>
+              APJ Abdul Kalam Technological University
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="h-100 bg-green p-4 rounded-4">
+          <h3>Experience</h3>
+
+          <div class="py-4">
+            <p class="text-dark-emphasis">
+              2024
+            </p>
+            <h5>
+              Data Science Intern
+            </h5>
+            <p class="text-dark-emphasis">
+              Mainflow Technologies <br>
+              Worked on data analysis, machine learning models, and visualization.
+            </p>
+          </div>
+
+          <div>
+            <p class="text-dark-emphasis">
+              2025 – Present
+            </p>
+            <h5>
+              Power BI Intern
+            </h5>
+            <p class="text-dark-emphasis">
+              Skill India Initiative <br>
+              Creating dashboards, reports, and data-driven insights.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="h-100 bg-teal p-4 rounded-4">
+          <h3>Interests</h3>
+
+          <div class="py-4">
+            <h5>
+              Research & Intelligent Systems
+            </h5>
+            <p class="text-dark-emphasis">
+              Smart urban planning, traffic optimization, and energy-efficient systems.
+            </p>
+          </div>
+
+          <div>
+            <h5>
+              Data Science & Machine Learning
+            </h5>
+            <p class="text-dark-emphasis">
+              Predictive modeling, optimization techniques, and data-driven decision making.
+            </p>
+          </div>
+
+          <div class="pt-3">
+            <h5>
+              Visualization & Analytics
+            </h5>
+            <p class="text-dark-emphasis">
+              Power BI, dashboards, and transforming complex data into insights.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <section class="portfolio py-5">
+  <div class="container">
+    <div class="justify-content-center">
+
+      <div class="row justify-content-center">
         <div class="col-lg-8" data-aos="fade-up">
-          <div class="bento-card p-5 h-100 shadow-lg">
-            <div class="edu-line">
-              <div class="edu-dot"></div>
-              <h3 class="fw-bold text-white">B.Tech in Computer Science & Engineering</h3>
-              <p class="text-primary fs-5 fw-medium mb-3">Government College of Engineering, Kannur</p>
-              <p class="text-dim mb-4">Focused on Machine Learning, Database Systems, and Intelligent Transportation Systems. Developed a strong technical foundation in algorithm design and data structures under APJ Abdul Kalam Technological University.</p>
-              <div class="d-flex gap-3">
-                <span class="badge bg-primary bg-opacity-10 text-primary border border-primary px-3 py-2 rounded-pill">Batch of 2021-2025</span>
+          <div class="section-header text-center">
+            <h4 class="fw-bold fs-2 txt-fx slide-up">
+              I am a Computer Science graduate with a strong interest in machine learning,
+              data-driven systems, and research-focused problem solving.
+            </h4>
+          </div>
+        </div>
+
+        <div id="filters"
+          class="button-group d-flex flex-wrap gap-3 justify-content-center py-5"
+          data-aos="fade-up">
+          <a href="#" class="btn btn-primary text-uppercase text-decoration-none is-checked"
+            data-filter=".publication">Publications</a>
+          <a href="#" class="btn btn-primary text-uppercase text-decoration-none"
+            data-filter=".project">Projects</a>
+          <a href="#" class="btn btn-primary text-uppercase text-decoration-none"
+            data-filter=".certification">Certifications</a>
+          <a href="#" class="btn btn-primary text-uppercase text-decoration-none"
+            data-filter=".skill">Skills</a>
+        </div>
+      </div>
+
+      <div class="grid p-0 clearfix row row-cols-1 row-cols-lg-2 row-cols-xl-3"
+        data-aos="fade-up">
+
+        <div class="col mb-4 portfolio-item publication">
+  <div class="card h-100 border-0 shadow-sm rounded-4">
+    <a href="https://ieeexplore.ieee.org/document/11337434" target="_blank">
+      <div class="card-img-top rounded-top-4 d-flex align-items-center justify-content-center bg-light" style="height: 220px; border-bottom: 1px solid #f0f0f0; overflow: hidden;">
+        <div class="text-center p-4">
+          <i class="bi bi-journal-bookmark-fill text-primary" style="font-size: 3rem;"></i>
+          <p class="mt-3 mb-0 fw-bold text-dark">IEEE Xplore Publication</p>
+          <span class="badge rounded-pill bg-info text-dark mt-2">Verified Research</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="card-body">
+      <h5 class="card-title text-primary fw-bold">Smart Urban Planning: AI & GIS Framework</h5>
+      
+      <p class="card-text text-muted" style="font-size: 0.9rem; line-height: 1.5;">
+        Published research introducing an automated framework for <strong>Traffic Signal Optimization</strong> and <strong>Energy Minimization</strong>. 
+        Utilized <strong>Reinforcement Learning</strong> models trained on <strong>SUMO simulations</strong> and integrated <strong>OpenStreetMap (OSM)</strong> data to generate optimized, downloadable GeoJSON layouts for sustainable city infrastructure.
+      </p>
+
+      <hr class="my-3 opacity-25">
+      
+      <div class="d-flex justify-content-between align-items-center">
+        <small class="text-secondary">IEEE ICCICA 2025</small>
+        <a href="https://ieeexplore.ieee.org/document/11337434" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+          Read Paper <i class="bi bi-arrow-up-right-circle ms-1"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+        <div class="col mb-4 portfolio-item publication">
+          <div class="card h-100 border-0 shadow-sm rounded-4">
+            <a href="images/publication-presentation.png"
+              data-lightbox="publication-1"
+              data-title="Conference Paper Presentation">
+              <img src="images/publication-presentation.png"
+                class="card-img-top img-fluid rounded-top-4"
+                alt="Paper Presentation Certificate">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Conference Paper Presentation</h5>
+              <p class="card-text text-muted">
+                Certificate for presenting a research paper at an academic conference or seminar.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col mb-4 portfolio-item publication">
+          <div class="card h-100 border-0 shadow-sm rounded-4">
+            <a href="images/publication-author.png"
+              data-lightbox="publication-2"
+              data-title="Author / Co-Author Certificate">
+              <img src="images/publication-author.png"
+                class="card-img-top img-fluid rounded-top-4"
+                alt="Author Certificate">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Author / Co-Author Certificate</h5>
+              <p class="card-text text-muted">
+                Official recognition for authorship of a published research paper.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+  <div class="col-lg-4 mb-4 portfolio-item project">
+    <div class="card h-100 border-0 shadow-sm rounded-4">
+      <a href="project-smart-urban.html" title="Smart Urban Planner">
+        <img
+          src="images/project-smart-urban.jpg"
+          class="card-img-top img-fluid rounded-top-4"
+          alt="Smart Urban Planner Project">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">
+          Smart Urban Planner
+        </h5>
+        <p class="card-text text-muted">
+          AI-driven urban road network optimization using
+          SUMO traffic simulation, machine learning–based
+          signal optimization, and a multi-objective
+          Genetic Algorithm to reduce congestion,
+          travel time, and energy consumption.
+        </p>
+        <a href="https://github.com/Arathics/smarturbanplanner" target="_blank">
+          View Project →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 mb-4 portfolio-item project">
+    <div class="card h-100 border-0 shadow-sm rounded-4">
+      <a href="project-churn.html" title="Customer Churn Prediction">
+        <img
+          src="images/project-churn.png"
+          class="card-img-top img-fluid rounded-top-4"
+          alt="Customer Churn Prediction Project">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">
+          Customer Churn Prediction
+        </h5>
+        <p class="card-text text-muted">
+          Machine learning project using Random Forest
+          on a large-scale telecom dataset (~209k records),
+          achieving 94% accuracy with SMOTE-based
+          class imbalance handling and feature analysis.
+        </p>
+        <a href="https://github.com/Arathics/Customer-Churn-Prediction-ML" target="_blank">
+          View Project →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 mb-4 portfolio-item project">
+    <div class="card h-100 border-0 shadow-sm rounded-4">
+      <a href="project-flamingo.html" title="Flamingo E-Commerce Platform">
+        <img
+          src="images/project-flamingo.jpeg"
+          class="card-img-top img-fluid rounded-top-4"
+          alt="Flamingo MERN Project">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">
+          Flamingo – MERN E-Commerce Platform
+        </h5>
+        <p class="card-text text-muted">
+          Full-stack MERN application connecting users
+          with local supermarkets, supporting secure payments,
+          urgent delivery requests, and delivery partner onboarding.
+        </p>
+        <a href="https://github.com/Arathics/Flamingo" target="_blank">
+          View Project →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 mb-4 portfolio-item project">
+    <div class="card h-100 border-0 shadow-sm rounded-4">
+      <a href="project-face-detection.html" title="Face Detection Classifier">
+        <img
+          src="images/project-face.png"
+          class="card-img-top img-fluid rounded-top-4"
+          alt="Face Detection Project">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">
+          Face Detection Classifier
+        </h5>
+        <p class="card-text text-muted">
+          Supervised learning–based binary face detection system
+          implemented using Logistic Regression, Naive Bayes,
+          and Decision Trees with dataset preprocessing and evaluation.
+        </p>
+        <a href="https://github.com/Arathics/Face-detection-classifier" target="_blank">
+          View Project →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 mb-4 portfolio-item project">
+    <div class="card h-100 border-0 shadow-sm rounded-4">
+      <a href="project-healthcare.html" title="Healthcare Data Analysis">
+        <img
+          src="images/project-healthcare.png"
+          class="card-img-top img-fluid rounded-top-4"
+          alt="Healthcare Data Analysis Project">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">
+          Healthcare Data Analysis
+        </h5>
+        <p class="card-text text-muted">
+          Predictive modeling project using Logistic Regression
+          on 1,800+ patient records, achieving 87.8% accuracy
+          after comprehensive exploratory data analysis and preprocessing.
+        </p>
+        <a href="https://github.com/Arathics/Predictive-Modeling-for-Diabetic-Outcomes.Task-6" target="_blank">
+          View Project →
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+       <div class="row g-4">
+
+  <div class="col mb-4 portfolio-item certification">
+    <div class="card h-100 border-0 shadow-sm rounded-4">
+      <div class="card-body">
+        <h5 class="card-title">Python for Data Science</h5>
+        <p class="card-text text-muted">
+          <strong>Institute:</strong> Indian Institute of Technology Madras (NPTEL) <br>
+          <strong>Date:</strong> 31/08/2025 <br>
+          <strong>Achievement:</strong> Awarded the designation of Elite <br>
+          <strong>Link:</strong> <a href="https://igit.me/Python-NPTEL" target="_blank">View Certificate</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col mb-4 portfolio-item certification">
+    <div class="card h-100 border-0 shadow-sm rounded-4">
+      <div class="card-body">
+        <h5 class="card-title">Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</h5>
+        <p class="card-text text-muted">
+          <strong>Institute:</strong> Oracle University <br>
+          <strong>Date:</strong> 21/10/2025 <br>
+          <strong>Achievement:</strong> Recognized as Oracle Certified Foundations Associate <br>
+          <strong>Link:</strong> <a href="https://igit.me/Oracle-AI" target="_blank">View Certificate</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col mb-4 portfolio-item certification">
+    <div class="card h-100 border-0 shadow-sm rounded-4">
+      <div class="card-body">
+        <h5 class="card-title">IELTS Certification</h5>
+        <p class="card-text text-muted">
+          Listening: 8.0 | Reading: 6.5 | Writing: 7.0 | Speaking: 6.5 <br>
+          <strong>Overall Band Score:</strong> 7.0 <br>
+          <strong>CEFR Level:</strong> C1
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col mb-4 portfolio-item certification">
+    <div class="card h-100 border-0 shadow-sm rounded-4">
+      <div class="card-body">
+        <h5 class="card-title">Introduction to Structured Query Language (SQL)</h5>
+        <p class="card-text text-muted">
+          <strong>Institute:</strong> University of Michigan (Coursera) <br>
+          <strong>Date:</strong> 09/10/2025 <br>
+          <strong>Achievement:</strong> Gained foundational skills in database querying and data management <br>
+          <strong>Link:</strong> <a href="https://www.coursera.org/account/accomplishments/records/GRRP950AF790" target="_blank">View Certificate</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col mb-4 portfolio-item certification">
+    <div class="card h-100 border-0 shadow-sm rounded-4">
+      <div class="card-body">
+        <h5 class="card-title">Demystifying Networking</h5>
+        <p class="card-text text-muted">
+          <strong>Institute:</strong> Indian Institute of Technology Bombay (NPTEL) <br>
+          <strong>Date:</strong> 31/08/2025 <br>
+          <strong>Achievement:</strong> Principles of computer networking, covering network models, protocols, and communication basics <br>
+          <strong>Link:</strong> <a href="https://igit.me/Demystifying-Networking" target="_blank">View Certificate</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col mb-4 portfolio-item certification">
+    <div class="card h-100 border-0 shadow-sm rounded-4">
+      <div class="card-body">
+        <h5 class="card-title">Data Visualisation: Empowering Business with Effective Insight</h5>
+        <p class="card-text text-muted">
+          <strong>Institute:</strong> Tata Group (Forage) <br>
+          <strong>Date:</strong> 22/05/2025 <br>
+          <strong>Achievement:</strong> Hands-on experience in data cleaning, visualization, business communication; built dashboards using Tableau/Power BI <br>
+          <strong>Link:</strong> <a href="https://igit.me/Data-Visualization-Forage" target="_blank">View Certificate</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col mb-4 portfolio-item certification">
+    <div class="card h-100 border-0 shadow-sm rounded-4">
+      <div class="card-body">
+        <h5 class="card-title">Artificial Intelligence with Python Workshop</h5>
+        <p class="card-text text-muted">
+          <strong>Institute:</strong> TECHMAGHI, Kshitij, IIT Kharagpur <br>
+          <strong>Date:</strong> 12/04/2024 <br>
+          <strong>Achievement:</strong> Workshop on Artificial Intelligence with Python organized by Techmaghi in association with Kshitij, IIT Kharagpur <br>
+          <strong>Link:</strong> <a href="https://igit.me/TECHMAGHI-AI" target="_blank">View Certificate</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+        <div class="col mb-4 portfolio-item skill">
+          <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+            <i class="bi bi-code-slash fs-1 text-primary mb-3"></i>
+            <h5 class="card-title">Programming</h5>
+            <p class="card-text fw-bold">
+              Python, Java, C, SQL
+            </p>
+            <p class="card-text text-muted small">
+              Strong foundation in data structures and algorithms.
+            </p>
+          </div>
+        </div>
+
+        <div class="col mb-4 portfolio-item skill">
+          <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+            <i class="bi bi-cpu fs-1 text-primary mb-3"></i>
+            <h5 class="card-title">Machine Learning & Data</h5>
+            <p class="card-text fw-bold">
+              Scikit-learn, Pandas, NumPy, Matplotlib
+            </p>
+            <p class="card-text text-muted small">
+              Experience in regression, classification, and data analysis.
+            </p>
+          </div>
+        </div>
+
+        <div class="col mb-4 portfolio-item skill">
+          <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+            <i class="bi bi-bar-chart fs-1 text-primary mb-3"></i>
+            <h5 class="card-title">Web & Visualization</h5>
+            <p class="card-text fw-bold">
+              HTML, CSS, Bootstrap, Power BI, Git
+            </p>
+            <p class="card-text text-muted small">
+              Front-end development and data visualization tools.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center p-3">
+        <a href="index.html"
+          class="btn btn-outline-dark btn-lg mt-3 text-uppercase text-decoration-none">
+          Explore My Work
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-3">Project Impact</h2>
+      <p class="text-muted">
+        A breakdown of the technical challenges I’ve solved and the real-world impact of my research.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4">
+          <div class="d-flex align-items-center mb-3">
+            <div class="bg-primary bg-opacity-10 p-3 rounded-3 me-3">
+              <i class="bi bi-geo-fill text-primary fs-3"></i>
+            </div>
+            <h5 class="m-0 fw-bold">Urban Optimization</h5>
+          </div>
+          <p class="small text-muted mb-3"><strong>Challenge:</strong> Reducing city-wide traffic congestion and energy waste.</p>
+          <p class="card-text">
+            Developed a system using <strong>Reinforcement Learning</strong> and <strong>SUMO</strong> simulations that automates traffic signal timing. Integrated <strong>OSM data</strong> to provide a 15% improvement in simulated traffic flow efficiency.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4">
+          <div class="d-flex align-items-center mb-3">
+            <div class="bg-success bg-opacity-10 p-3 rounded-3 me-3">
+              <i class="bi bi-graph-up-arrow text-success fs-3"></i>
+            </div>
+            <h5 class="m-0 fw-bold">Predictive Modeling</h5>
+          </div>
+          <p class="small text-muted mb-3"><strong>Challenge:</strong> Handling massive, imbalanced datasets for churn and healthcare.</p>
+          <p class="card-text">
+            Engineered models on datasets with over <strong>200k records</strong>. Implemented <strong>SMOTE</strong> for class balancing and achieved <strong>94% accuracy</strong> using Random Forest classifiers, turning raw data into actionable business insights.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4">
+          <div class="d-flex align-items-center mb-3">
+            <div class="bg-info bg-opacity-10 p-3 rounded-3 me-3">
+              <i class="bi bi-layers-fill text-info fs-3"></i>
+            </div>
+            <h5 class="m-0 fw-bold">Full-Stack Delivery</h5>
+          </div>
+          <p class="small text-muted mb-3"><strong>Challenge:</strong> Connecting local commerce with real-time user needs.</p>
+          <p class="card-text">
+            Architected the <strong>Flamingo MERN platform</strong>, enabling secure payment gateways and localized delivery tracking. Focused on creating a modular, <strong>MDB-compliant</strong> database structure for high-traffic scalability.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="py-5">
+  <div class="container">
+
+    <section class="py-5" style="background-color: #06090f;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-3 fw-bold text-white">Research Spotlight</h2>
+      <p class="text-primary text-uppercase ls-2 small fw-bold">Academic Milestones</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="swiper research-clean-swiper pb-5">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide h-auto">
+              <div class="card border-0 bg-dark rounded-5 overflow-hidden shadow-lg h-100">
+                <div class="row g-0 align-items-stretch">
+                  <div class="col-md-6 min-vh-25">
+                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=800" 
+                         class="img-fluid h-100 object-fit-cover w-100" alt="Smart City">
+                  </div>
+                  <div class="col-md-6 d-flex align-items-center">
+                    <div class="p-4 p-lg-5 text-white">
+                      <span class="badge bg-primary rounded-pill mb-3 px-3">IEEE Publication</span>
+                      <h2 class="fw-bold mb-3">Smart Urban Planning</h2>
+                      <p class="text-secondary mb-4" style="line-height: 1.6;">
+                        Published research on optimizing traffic flow and energy using <strong>Reinforcement Learning</strong> and <strong>GIS</strong> frameworks.
+                      </p>
+                      <div class="d-flex flex-wrap gap-2">
+                        <span class="badge border border-secondary text-secondary small">Python</span>
+                        <span class="badge border border-secondary text-secondary small">SUMO</span>
+                        <span class="badge border border-secondary text-secondary small">GIS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide h-auto">
+              <div class="card border-0 bg-dark rounded-5 overflow-hidden shadow-lg h-100">
+                <div class="row g-0 align-items-stretch">
+                  <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" 
+                         class="img-fluid h-100 object-fit-cover w-100" alt="Data Science">
+                  </div>
+                  <div class="col-md-6 d-flex align-items-center">
+                    <div class="p-4 p-lg-5 text-white">
+                      <span class="badge bg-success rounded-pill mb-3 px-3">Industry Impact</span>
+                      <h2 class="fw-bold mb-3">Data Science Intern</h2>
+                      <p class="text-secondary mb-4" style="line-height: 1.6;">
+                        Engineered predictive models with <strong>94% accuracy</strong> for large-scale telecom datasets using Random Forest algorithms.
+                      </p>
+                      <div class="pt-2 border-top border-secondary mt-3">
+                        <small class="text-info fw-bold">Main Flow Services & Technologies</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide h-auto">
+              <div class="card border-0 bg-dark rounded-5 overflow-hidden shadow-lg h-100">
+                <div class="row g-0 align-items-stretch">
+                  <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=800" 
+                         class="img-fluid h-100 object-fit-cover w-100" alt="Programming">
+                  </div>
+                  <div class="col-md-6 d-flex align-items-center">
+                    <div class="p-4 p-lg-5 text-white">
+                      <span class="badge bg-warning text-dark rounded-pill mb-3 px-3">Elite Designation</span>
+                      <h2 class="fw-bold mb-3">Python for Data Science</h2>
+                      <p class="text-secondary mb-4" style="line-height: 1.6;">
+                        Recognized as an <strong>Elite performer</strong> by IIT Madras (NPTEL) for advanced mastery in Python and algorithmic logic.
+                      </p>
+                      <i class="bi bi-award text-warning fs-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination research-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .research-clean-swiper .swiper-slide {
+    opacity: 0 !important;
+    transition: opacity 0.5s ease;
+  }
+  .research-clean-swiper .swiper-slide-active {
+    opacity: 1 !important;
+  }
+  .research-pagination .swiper-pagination-bullet {
+    background: #0d6efd !important;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const researchSwiper = new Swiper('.research-clean-swiper', {
+      loop: true,
+      autoHeight: true, // Prevents text from being cut off
+      spaceBetween: 30,
+      effect: "fade", // Using fade instead of creative to prevent text mixing
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.research-pagination',
+        clickable: true,
+      },
+    });
+  });
+</script>
+<section>
+  <div class="container">
+    <div class="text-center pt-5">
+      <h2 class="display-3">
+        FAQs
+      </h2>
+      <p class="text-muted">
+        Common questions about my academic background, research interests, and work.
+      </p>
+    </div>
+
+    <div class="row mt-5 align-items-center">
+      <div class="col-lg-6">
+        <img src="images/illustration-6.png" class="img-fluid" alt="FAQ Illustration">
+      </div>
+
+      <div class="col-lg-6">
+        <div class="accordion accordion-flush" id="accordion-flush">
+
+          <div class="accordion-item border mb-3 rounded-3">
+            <h5 class="accordion-header">
+              <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                What are your main research interests?
+              </button>
+            </h5>
+            <div id="collapseOne" class="accordion-collapse collapse show"
+              data-bs-parent="#accordion-flush">
+              <div class="accordion-body">
+                <p>
+                  My research interests include machine learning, intelligent transportation
+                  systems, traffic and energy optimization, geospatial analysis, and
+                  data-driven urban planning.
+                </p>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-4" data-aos="fade-left">
-          <div class="bento-card p-5 h-100 bg-primary bg-opacity-10 border-primary border-opacity-25">
-            <h4 class="fw-bold mb-4">Professional Growth</h4>
-            <div class="mb-4">
-              <h6 class="fw-bold text-primary mb-1">Power BI Intern</h6>
-              <p class="small text-white-50">Skill India Initiative | 2025</p>
-            </div>
-            <div class="pt-3 border-top border-secondary border-opacity-25">
-              <h6 class="fw-bold text-success mb-1">Data Science Intern</h6>
-              <p class="small text-white-50">Main Flow Technologies | 2024</p>
+
+          <div class="accordion-item border mb-3 rounded-3">
+            <h5 class="accordion-header">
+              <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                What was your final year project about?
+              </button>
+            </h5>
+            <div id="collapseTwo" class="accordion-collapse collapse"
+              data-bs-parent="#accordion-flush">
+              <div class="accordion-body">
+                <p>
+                  My final year project focused on developing an AI-driven smart urban
+                  planning framework using machine learning, GIS, SUMO-based traffic
+                  simulation, and genetic algorithms to reduce congestion and energy usage.
+                </p>
+              </div>
             </div>
           </div>
+
+          <div class="accordion-item border mb-3 rounded-3">
+            <h5 class="accordion-header">
+              <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                Do you have research publications?
+              </button>
+            </h5>
+            <div id="collapseThree" class="accordion-collapse collapse"
+              data-bs-parent="#accordion-flush">
+              <div class="accordion-body">
+                <p>
+                  Yes. I authored and presented a research paper titled
+                  <em>“Smart Urban Planning: A Streamlit-Based Framework for Traffic and Energy
+                  Optimization Using Machine Learning and GIS”</em> at ICCICA-2025,
+                  an IEEE-sponsored international conference.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border mb-3 rounded-3">
+            <h5 class="accordion-header">
+              <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                What tools and technologies do you use?
+              </button>
+            </h5>
+            <div id="collapseFour" class="accordion-collapse collapse"
+              data-bs-parent="#accordion-flush">
+              <div class="accordion-body">
+                <p>
+                  I work with Python, Scikit-learn, TensorFlow, SQL, Power BI, GeoPandas,
+                  OSMnx, FastAPI, Git, and SUMO for simulation and optimization tasks.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border mb-3 rounded-3">
+            <h5 class="accordion-header">
+              <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                What are your future academic goals?
+              </button>
+            </h5>
+            <div id="collapseFive" class="accordion-collapse collapse"
+              data-bs-parent="#accordion-flush">
+              <div class="accordion-body">
+                <p>
+                  I aim to pursue a master’s degree with a strong research component,
+                  focusing on machine learning and intelligent systems, and later
+                  contribute to applied research or doctoral studies.
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="py-5" id="portfolio">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="display-3 fw-bold mb-4" data-aos="fade-up">Technical <span class="text-primary">Matrix</span></h2>
-        <div class="d-flex flex-wrap justify-content-center gap-2 mb-5" data-aos="fade-up">
-          <button class="filter-pill active" onclick="filterPortfolio('all')">All Archive</button>
-          <button class="filter-pill" onclick="filterPortfolio('project')">Full Projects</button>
-          <button class="filter-pill" onclick="filterPortfolio('publication')">Papers</button>
-          <button class="filter-pill" onclick="filterPortfolio('certification')">Credentials</button>
-        </div>
-      </div>
 
-      <div class="row g-4" id="matrixGrid">
-        <div class="col-lg-4 col-md-6 portfolio-item project" data-aos="fade-up">
-          <div class="matrix-card h-100 overflow-hidden shadow-sm">
-            <img src="images/project-smart-urban.jpg" class="w-100" alt="Urban Planner" style="height: 200px; object-fit: cover;">
-            <div class="p-4">
-              <h5 class="fw-bold mb-2">Smart Urban Planner</h5>
-              <p class="small text-dim">Streamlit framework using RL for automated traffic signal timing.</p>
-              <a href="https://github.com/Arathics/smarturbanplanner" target="_blank" class="text-primary small fw-bold">Source Code <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item project" data-aos="fade-up">
-          <div class="matrix-card h-100 overflow-hidden shadow-sm">
-            <img src="images/project-churn.png" class="w-100" alt="Churn Prediction" style="height: 200px; object-fit: cover;">
-            <div class="p-4">
-              <h5 class="fw-bold mb-2">Customer Churn Prediction</h5>
-              <p class="small text-dim">Random Forest model achieving 94% accuracy on large telecom data.</p>
-              <a href="https://github.com/Arathics/Customer-Churn-Prediction-ML" target="_blank" class="text-primary small fw-bold">Source Code <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item project" data-aos="fade-up">
-          <div class="matrix-card h-100 overflow-hidden shadow-sm">
-            <img src="images/project-flamingo.jpeg" class="w-100" alt="Flamingo" style="height: 200px; object-fit: cover;">
-            <div class="p-4">
-              <h5 class="fw-bold mb-2">Flamingo MERN Stack</h5>
-              <p class="small text-dim">Local supermarket e-commerce platform with real-time delivery tracking.</p>
-              <a href="https://github.com/Arathics/Flamingo" target="_blank" class="text-primary small fw-bold">Source Code <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item publication" data-aos="fade-up">
-          <div class="matrix-card h-100 p-5 d-flex flex-column border-primary border-opacity-25">
-            <i class="bi bi-journal-check display-3 text-primary mb-4"></i>
-            <h5 class="fw-bold mb-3">IEEE ICCICA-2025</h5>
-            <p class="small text-dim">Published research on Smart Urban Planning frameworks using RL and GIS.</p>
-            <a href="https://ieeexplore.ieee.org/document/11337434" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill mt-auto">Read on IEEE Xplore</a>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item certification" data-aos="fade-up">
-          <div class="matrix-card h-100 p-4">
-            <h6 class="text-primary fw-bold mb-3">IELTS ACADEMIC</h6>
-            <h5 class="fw-bold mb-2">Band Score: 7.0</h5>
-            <p class="small text-dim">Level C1 Mastery. Listening: 8.0 | Writing: 7.0</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item certification" data-aos="fade-up">
-          <div class="matrix-card h-100 p-4 border-warning border-opacity-25">
-            <h6 class="text-warning fw-bold mb-3">NPTEL / IIT MADRAS</h6>
-            <h5 class="fw-bold mb-2">Python for Data Science</h5>
-            <p class="small text-dim">Awarded Elite designation for advanced algorithmic proficiency.</p>
-            <a href="https://igit.me/Python-NPTEL" target="_blank" class="text-warning small fw-bold">Verify <i class="bi bi-patch-check"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item certification" data-aos="fade-up">
-          <div class="matrix-card h-100 p-4 border-primary border-opacity-25">
-            <h6 class="text-primary fw-bold mb-3">ORACLE UNIVERSITY</h6>
-            <h5 class="fw-bold mb-2">AI Foundations 2025</h5>
-            <p class="small text-dim">Certified OCI Associate for AI Infrastructure and logic.</p>
-            <a href="https://igit.me/Oracle-AI" target="_blank" class="text-primary small fw-bold">Verify <i class="bi bi-patch-check"></i></a>
-          </div>
-        </div>
-
-      </div>
+    <div class="text-center">
+      <a href="blog.html"
+        class="btn btn-outline-dark btn-lg mt-3 btn-color text-uppercase text-decoration-none">
+        View All Updates
+      </a>
     </div>
-  </section>
 
-  <section class="py-5 bg-dark bg-opacity-25">
-    <div class="container">
-      <div class="row g-5 align-items-center">
-        <div class="col-lg-5" data-aos="fade-right">
-          <h2 class="display-4 fw-bold">Curiosity <br><span class="text-primary">Desk</span></h2>
-          <p class="text-dim fs-5">Addressing common inquiries regarding my academic and technical trajectory.</p>
-        </div>
-        <div class="col-lg-7" data-aos="fade-left">
-          <div class="accordion accordion-flush" id="newFaq">
-            <div class="accordion-item glass-morphism border-0 mb-3 px-3">
-              <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#q1">Key Research Interest?</button></h2>
-              <div id="q1" class="accordion-collapse collapse" data-bs-parent="#newFaq"><div class="accordion-body text-dim">Optimization of urban road networks using Machine Learning (Reinforcement Learning) and GIS data integration.</div></div>
-            </div>
-            <div class="accordion-item glass-morphism border-0 mb-3 px-3">
-              <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#q2">Post-Graduate Goals?</button></h2>
-              <div id="q2" class="accordion-collapse collapse" data-bs-parent="#newFaq"><div class="accordion-body text-dim">Pursuing a Research Master's in AI in Europe, targeting Women in STEM and DSU scholarships for 2026.</div></div>
-            </div>
+  </div>
+</section>
+
+  <section class="p-5 bg-yellow py-5">
+  <div class="container">
+    <div class="row justify-content-center my-5 align-items-center">
+
+      <div class="col-md-5">
+        <h6 class="text-uppercase">
+          Get in Touch
+        </h6>
+        <h2 class="display-3">
+          Contact Me
+        </h2>
+        <p class="text-muted">
+          If you are a faculty member, researcher, or organization interested in my academic work,
+          research projects, or collaboration opportunities, feel free to reach out.
+        </p>
+        <p class="text-muted">
+          I am open to discussions related to research, internships, and graduate study opportunities.
+        </p>
+      </div>
+
+      <div class="col-md-5">
+        <form action="#" method="post">
+
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control p-3 rounded-4"
+              name="name"
+              id="name"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="email"
+              class="form-control p-3 rounded-4"
+              name="email"
+              id="email"
+              placeholder="Your Email Address"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <textarea
+              class="form-control p-3 rounded-4"
+              name="message"
+              id="message"
+              rows="4"
+              placeholder="Your Message (Research, Collaboration, or Academic Inquiry)"
+              required
+            ></textarea>
+          </div>
+
+          <div class="d-grid">
+            <button type="submit" class="btn btn-dark btn-lg text-uppercase rounded-4">
+              Send Message
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer id="footer" class="bg-black text-white py-5">
+  <div class="container-sm">
+    <div class="row g-md-5 my-5 align-items-start">
+
+      <div class="col-md-4 text-center text-md-start">
+        <div class="info-box">
+          <h1 class="portfolio-logo mb-4">Arathi</h1>
+          <p class="py-2 text-white">
+            Subscribe to my newsletter to get updates on my research, projects, and academic work.
+          </p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/arathi-pradeep-44b394229/" target="_blank">
+              <svg class="linkedin" width="24" height="24">
+                <use xlink:href="#linkedin"></use>
+              </svg>
+            </a>
+            <a href="https://github.com/Arathics" target="_blank">
+              <svg class="github" width="24" height="24">
+                <use xlink:href="#github"></use>
+              </svg>
+            </a>
+            <a href="https://twitter.com/arathipradeep" target="_blank">
+              <svg class="twitter" width="24" height="24">
+                <use xlink:href="#twitter"></use>
+              </svg>
+            </a>
+            <a href="mailto:arathipradeep02@gmail.com">
+              <svg class="email" width="24" height="24">
+                <use xlink:href="#email"></use>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="py-5" id="contact">
-    <div class="container" data-aos="zoom-in">
-      <div class="bento-card p-5 overflow-hidden">
-        <div class="row g-5">
-          <div class="col-lg-5">
-            <h2 class="display-3 fw-bold text-gradient mb-4">Let's <br>Connect.</h2>
-            <div class="d-flex align-items-center gap-4 mb-4">
-              <div class="bg-primary p-3 rounded-circle shadow-lg"><i class="bi bi-envelope-at fs-4 text-white"></i></div>
-              <span class="fs-5 fw-medium">arathipradeep02@gmail.com</span>
-            </div>
-            <div class="d-flex align-items-center gap-4">
-              <div class="bg-success p-3 rounded-circle shadow-lg"><i class="bi bi-whatsapp fs-4 text-white"></i></div>
-              <span class="fs-5 fw-medium">+91 97782 24700</span>
-            </div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-6 col-md-4 mb-3">
+            <ul class="list-unstyled">
+              <li><a class="text-decoration-none text-white" href="index.html">Home</a></li>
+              <li><a class="text-decoration-none text-white" href="#about">About</a></li>
+              <li><a class="text-decoration-none text-white" href="#projects">Projects</a></li>
+              <li><a class="text-decoration-none text-white" href="#portfolio">Portfolio</a></li>
+              <li><a class="text-decoration-none text-white" href="#blog">Blog</a></li>
+              <li><a class="text-decoration-none text-white" href="#contact">Contact</a></li>
+            </ul>
           </div>
-          <div class="col-lg-7">
-            <form action="#" method="post" class="row g-3">
-              <div class="col-md-6"><input type="text" class="contact-input w-100" placeholder="Your Name"></div>
-              <div class="col-md-6"><input type="email" class="contact-input w-100" placeholder="Email Address"></div>
-              <div class="col-12"><textarea class="contact-input w-100" rows="5" placeholder="Project details or academic inquiry..."></textarea></div>
-              <div class="col-12"><button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill py-3 mt-3 shadow-lg">Transmit Message</button></div>
-            </form>
+
+          <div class="col-12 col-md-8">
+            <p class="mb-2">
+              Feel free to contact me or simply have a conversation about my research and projects.
+            </p>
+            <h3>
+              <a href="mailto:arathipradeep02@gmail.com" class="text-white text-decoration-none">arathipradeep02@gmail.com</a>
+            </h3>
           </div>
         </div>
       </div>
+
     </div>
-  </section>
 
-  <footer class="py-5 text-center border-top border-secondary border-opacity-25 mt-5">
-    <p class="small text-dim">© 2026 Arathi Pradeep. Built with AI & Passion for Excellence.</p>
-  </footer>
+    <div class="row">
+      <p class="text-center mt-4">
+        ©2026 Arathi Pradeep. Portfolio Template customized. Designed by <a href="https://templatesjungle.com/" class="text-white" target="_blank">TemplatesJungle</a>. Distributed by <a href="https://themewagon.com" class="text-white" target="_blank">ThemeWagon</a>.
+      </p>
+    </div>
+  </div>
+</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  
-  <script>
-    AOS.init();
 
-    // Mouse Glow Effect
-    document.addEventListener('mousemove', (e) => {
-      const glow = document.getElementById('glow');
-      glow.style.left = e.clientX + 'px';
-      glow.style.top = e.clientY + 'px';
-    });
+  <script src="js/jquery-1.11.0.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
 
-    function filterPortfolio(c) {
-      const items = document.querySelectorAll('.portfolio-item');
-      const btns = document.querySelectorAll('.filter-pill');
-      btns.forEach(b => b.classList.remove('active'));
-      event.target.classList.add('active');
-      items.forEach(i => {
-        i.style.display = (c === 'all' || i.classList.contains(c)) ? 'block' : 'none';
-      });
-      AOS.refresh();
-    }
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> <script src="js/plugins.js"></script>
+  <script type="text/javascript" src="js/lightbox.min.js"></script>
+
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>
