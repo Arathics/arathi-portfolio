@@ -2,243 +2,161 @@
 <html lang="en">
 
 <head>
-  <title>Arathi Pradeep | AI & ML Engineer</title>
+  <title>Arathi Pradeep | AI & Research Engineer</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/lightbox.min.css">
 
   <style>
     :root {
-      --bg-dark: #06090f;
-      --card-bg: #0d1117;
-      --accent: #0d6efd;
-      --text-muted: #8b949e;
-      --glass: rgba(255, 255, 255, 0.03);
+      --bg: #030508;
+      --card: #0d1117;
+      --accent: #3b82f6;
+      --accent-glow: rgba(59, 130, 246, 0.5);
     }
 
     body {
       font-family: 'Work Sans', sans-serif;
-      background-color: var(--bg-dark);
-      color: #ffffff;
+      background-color: var(--bg);
+      color: #e6edf3;
       overflow-x: hidden;
     }
 
+    /* Animated Background */
+    .bg-glow {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+      z-index: -1;
+    }
+
+    /* Typography */
     .text-gradient {
-      background: linear-gradient(90deg, #ffffff 0%, #3b82f6 100%);
+      background: linear-gradient(to right, #fff, var(--accent));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* Modern Animations & Glass */
-    .glass-card {
-      background: var(--glass);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 1.5rem;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* High-End Components */
+    .glass-box {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 2rem;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     }
 
-    .glass-card:hover {
+    .glass-box:hover {
       border-color: var(--accent);
-      background: rgba(255, 255, 255, 0.07);
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0 30px var(--accent-glow);
+      transform: translateY(-10px);
     }
 
-    .portfolio-card {
-      background: var(--card-bg);
-      border-radius: 1.25rem;
-      border: 1px solid #30363d;
-      overflow: hidden;
-      height: 100%;
-      transition: 0.3s ease;
+    .bento-tag {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
     }
 
-    .portfolio-card:hover img {
-      transform: scale(1.1);
+    .project-card img {
+      transition: transform 0.6s ease;
+      filter: grayscale(30%);
     }
 
-    .img-container {
-      overflow: hidden;
+    .project-card:hover img {
+      transform: scale(1.05);
+      filter: grayscale(0%);
     }
 
-    .img-container img {
-      transition: transform 0.5s ease;
-    }
+    /* Custom Swiper pagination */
+    .swiper-pagination-bullet-active { background: var(--accent) !important; }
 
-    /* Nav blur */
-    .backdrop-blur {
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .filter-btn {
+    /* Filter Sidebar/Top Styling */
+    .nav-pills .nav-link {
+      color: #8b949e;
+      border: 1px solid transparent;
       border-radius: 50px;
-      padding: 10px 25px;
-      border: 1px solid #30363d;
-      color: var(--text-muted);
-      background: transparent;
-      transition: all 0.3s;
+      margin: 0 5px;
     }
 
-    .filter-btn.active {
+    .nav-pills .nav-link.active {
       background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-      box-shadow: 0 0 15px rgba(13, 110, 253, 0.5);
-    }
-
-    .swiper-slide {
-      opacity: 0.4;
-      transition: opacity 0.5s;
-    }
-
-    .swiper-slide-active {
-      opacity: 1;
-    }
-
-    .accordion-item {
-      background-color: transparent !important;
-      border: 1px solid #30363d !important;
-      margin-bottom: 15px;
-      border-radius: 15px !important;
-      overflow: hidden;
-    }
-
-    .accordion-button {
-      background-color: transparent !important;
-      color: white !important;
-      box-shadow: none !important;
-    }
-
-    .form-control {
-      background-color: #0d1117 !important;
-      border: 1px solid #30363d !important;
-      color: white !important;
-      transition: 0.3s;
-    }
-
-    .form-control:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 10px rgba(13, 110, 253, 0.2);
+      box-shadow: 0 0 15px var(--accent-glow);
     }
   </style>
 </head>
 
 <body>
+  <div class="bg-glow"></div>
 
-  <nav class="navbar navbar-expand-lg navbar-dark py-4 sticky-top backdrop-blur">
+  <nav class="navbar navbar-expand-lg navbar-dark py-4 sticky-top bg-black bg-opacity-50 backdrop-blur" style="backdrop-filter: blur(10px);">
     <div class="container">
-      <a class="navbar-brand fw-bold fs-3" href="#">ARATHI<span class="text-primary">.</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto gap-lg-4 align-items-center mt-3 mt-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#updates">Updates</a></li>
-          <li class="nav-item">
-            <div class="d-flex gap-3">
-              <a href="https://linkedin.com/in/arathi-pradeep-44b394229" class="text-white opacity-75"><i class="bi bi-linkedin fs-5"></i></a>
-              <a href="https://github.com/Arathics" class="text-white opacity-75"><i class="bi bi-github fs-5"></i></a>
-              <a href="mailto:arathipradeep02@gmail.com" class="text-white opacity-75"><i class="bi bi-envelope-fill fs-5"></i></a>
-            </div>
-          </li>
-        </ul>
+      <a class="navbar-brand fw-black fs-2 ls-1" href="#">ARATHI<span class="text-primary">.</span></a>
+      <div class="ms-auto d-flex gap-3 fs-5">
+        <a href="https://linkedin.com/in/arathi-pradeep-44b394229" class="text-white opacity-50 hover-opacity-100"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/Arathics" class="text-white opacity-50"><i class="bi bi-github"></i></a>
       </div>
     </div>
   </nav>
 
-  <section class="py-5">
-    <div class="container" data-aos="zoom-out" data-aos-duration="1200">
-      <div class="p-5 rounded-5 border border-secondary border-opacity-25 shadow-lg overflow-hidden position-relative" 
-           style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/banner1.png') center/cover;">
-        
-        <div class="row align-items-center py-5">
-          <div class="col-lg-8" data-aos="fade-right" data-aos-delay="300">
-            <span class="badge bg-primary px-3 py-2 mb-3 rounded-pill ls-2">AI & ML ENGINEER</span>
-            <h1 class="display-1 fw-black text-white mb-3">Arathi <br><span class="text-gradient">Pradeep</span></h1>
-            <p class="lead text-white-50 mb-4 col-md-10">Transforming urban infrastructure through the power of Reinforcement Learning and Intelligent Geospatial frameworks.</p>
+  <section class="min-vh-100 d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8" data-aos="fade-right">
+          <div class="bento-tag mb-3">Computer Science & AI Graduate</div>
+          <h1 class="display-1 fw-black mb-4">Crafting the Future of <br><span class="text-gradient">Smart Urbanism.</span></h1>
+          <p class="lead opacity-75 mb-5 col-lg-10">B.Tech CSE graduate from GCE Kannur. Specialized in Reinforcement Learning, GIS optimization, and high-accuracy predictive modeling.</p>
+          
+          <div class="row g-3 stats-row">
+            <div class="col-6 col-md-3"><div class="glass-box p-4 text-center"><h3>7.56</h3><small class="opacity-50">CGPA</small></div></div>
+            <div class="col-6 col-md-3"><div class="glass-box p-4 text-center"><h3>7.0</h3><small class="opacity-50">IELTS (C1)</small></div></div>
+            <div class="col-6 col-md-3"><div class="glass-box p-4 text-center"><h3>1</h3><small class="opacity-50">IEEE Paper</small></div></div>
+            <div class="col-6 col-md-3"><div class="glass-box p-4 text-center"><h3>2</h3><small class="opacity-50">Internships</small></div></div>
           </div>
-        </div>
-
-        <div class="row g-3" data-aos="fade-up" data-aos-delay="600">
-          <div class="col-6 col-lg-3"><div class="glass-card p-3 text-center"><h3>4+</h3><small class="text-uppercase ls-1">Projects</small></div></div>
-          <div class="col-6 col-lg-3"><div class="glass-card p-3 text-center"><h3>1</h3><small class="text-uppercase ls-1 text-info">Internship</small></div></div>
-          <div class="col-6 col-lg-3"><div class="glass-card p-3 text-center"><h3>10+</h3><small class="text-uppercase ls-1">Skills</small></div></div>
-          <div class="col-6 col-lg-3"><div class="glass-card p-3 text-center"><h3>1</h3><small class="text-uppercase ls-1 text-primary">IEEE Paper</small></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-5">
+  <section class="py-5 bg-black bg-opacity-50" id="updates">
     <div class="container">
       <div class="text-center mb-5" data-aos="fade-up">
-        <h2 class="display-4 fw-bold">Technical <span class="text-primary">Impact</span></h2>
-        <p class="text-white-50">Proven results through code and research.</p>
-      </div>
-      <div class="row g-4">
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="glass-card p-5 h-100">
-            <div class="bg-primary bg-opacity-10 p-3 rounded-3 d-inline-block mb-4"><i class="bi bi-geo-fill text-primary fs-3"></i></div>
-            <h4 class="fw-bold">Urban RL Models</h4>
-            <p class="text-white-50">Integrated Reinforcement Learning with SUMO to improve traffic flow efficiency by 15% in complex OSM networks.</p>
-          </div>
-        </div>
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="glass-card p-5 h-100">
-            <div class="bg-success bg-opacity-10 p-3 rounded-3 d-inline-block mb-4"><i class="bi bi-graph-up-arrow text-success fs-3"></i></div>
-            <h4 class="fw-bold">Predictive Power</h4>
-            <p class="text-white-50">Engineered churn prediction models on 200k+ records, achieving 94% accuracy with optimized class balancing.</p>
-          </div>
-        </div>
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="glass-card p-5 h-100">
-            <div class="bg-info bg-opacity-10 p-3 rounded-3 d-inline-block mb-4"><i class="bi bi-layers-fill text-info fs-3"></i></div>
-            <h4 class="fw-bold">Full-Stack Scale</h4>
-            <p class="text-white-50">Architected MERN platforms for localized commerce, focusing on low-latency delivery tracking and modular DB design.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-5" id="updates" style="background-color: #030508;">
-    <div class="container">
-      <div class="text-center mb-5" data-aos="fade-down">
-        <h2 class="display-3 fw-bold text-white">Research <span class="text-gradient">Spotlight</span></h2>
+        <h2 class="display-4 fw-bold">Research <span class="text-primary">Spotlight</span></h2>
       </div>
 
-      <div class="swiper research-swiper rounded-5 shadow-lg overflow-hidden" data-aos="zoom-in">
+      <div class="swiper research-swiper rounded-5" data-aos="zoom-in">
         <div class="swiper-wrapper">
-          <div class="swiper-slide bg-dark">
-            <div class="row g-0 align-items-center">
-              <div class="col-md-6"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=1200" class="w-100" style="height: 450px; object-fit: cover;"></div>
-              <div class="col-md-6 p-5">
-                <span class="badge bg-primary mb-3">IEEE PUBLICATION</span>
-                <h2 class="fw-bold">Smart Urban Planning</h2>
-                <p class="text-secondary lead">Optimizing traffic flow using Reinforcement Learning and GIS. Published in 2025.</p>
-                <a href="https://ieeexplore.ieee.org/document/11337434" target="_blank" class="btn btn-outline-primary rounded-pill mt-3">Read Paper</a>
+          <div class="swiper-slide">
+            <div class="glass-box overflow-hidden border-0">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-6"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=1200" class="w-100" style="height: 500px; object-fit: cover;"></div>
+                <div class="col-md-6 p-5">
+                  <span class="badge bg-primary mb-3">IEEE PUBLICATION</span>
+                  <h2 class="fw-bold mb-3">Smart Urban Planning Framework</h2>
+                  <p class="opacity-75 mb-4">Published at ICCICA-2025. This research introduces an automated framework for Traffic Signal Optimization and Energy Minimization using Reinforcement Learning and GIS.</p>
+                  <a href="https://ieeexplore.ieee.org/document/11337434" target="_blank" class="btn btn-outline-primary rounded-pill">View on IEEE Xplore</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="swiper-slide bg-dark">
-            <div class="row g-0 align-items-center">
-              <div class="col-md-6"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" class="w-100" style="height: 450px; object-fit: cover;"></div>
-              <div class="col-md-6 p-5">
-                <span class="badge bg-success mb-3">ELITE CERTIFICATION</span>
-                <h2 class="fw-bold">Python for Data Science</h2>
-                <p class="text-secondary lead">Awarded Elite designation by IIT Madras (NPTEL) for advanced mastery in Data Science.</p>
+          <div class="swiper-slide">
+            <div class="glass-box overflow-hidden border-0">
+              <div class="row g-0 align-items-center text-white">
+                <div class="col-md-6"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" class="w-100" style="height: 500px; object-fit: cover;"></div>
+                <div class="col-md-6 p-5">
+                  <span class="badge bg-success mb-3">CERTIFICATION</span>
+                  <h2 class="fw-bold mb-3">Elite Designation: Python for Data Science</h2>
+                  <p class="opacity-75 mb-4">Awarded by IIT Madras (NPTEL). Specialized mastery in data processing, algorithmic efficiency, and statistical analysis.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -248,98 +166,126 @@
     </div>
   </section>
 
-  <section class="py-5" id="portfolio">
-    <div class="container text-center">
-      <h2 class="display-4 fw-bold mb-5" data-aos="fade-up">Portfolio <span class="text-primary">Archive</span></h2>
-      
-      <div class="d-flex flex-wrap justify-content-center gap-2 mb-5" data-aos="fade-up">
-        <button class="filter-btn active" onclick="filterPortfolio('all')">All</button>
-        <button class="filter-btn" onclick="filterPortfolio('publication')">Publications</button>
-        <button class="filter-btn" onclick="filterPortfolio('project')">Projects</button>
-        <button class="filter-btn" onclick="filterPortfolio('skill')">Skills</button>
+  <section class="py-5" id="skills">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="display-5 fw-bold">Skill <span class="text-primary">Architecture</span></h2>
       </div>
-
-      <div class="row g-4 text-start" id="portfolio-grid">
-        <div class="col-md-6 col-lg-4 portfolio-item publication" data-aos="fade-up">
-          <div class="portfolio-card shadow-sm h-100 glass-card p-0">
-            <div class="p-4 bg-primary bg-opacity-10 text-center border-bottom border-white border-opacity-10">
-              <i class="bi bi-journal-bookmark-fill display-4 text-primary"></i>
-            </div>
-            <div class="p-4">
-              <h5 class="fw-bold mb-2">IEEE Xplore Publication</h5>
-              <p class="small text-white-50">Smart Urban Planning: AI-GIS Framework for Traffic Optimization.</p>
-              <a href="https://ieeexplore.ieee.org/document/11337434" target="_blank" class="btn btn-sm btn-outline-primary mt-2 rounded-pill px-3">View Paper</a>
-            </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="glass-box p-5 h-100">
+            <i class="bi bi-cpu display-4 text-primary mb-4"></i>
+            <h4 class="fw-bold">AI & Machine Learning</h4>
+            <p class="small opacity-50">Scikit-learn, TensorFlow, Reinforcement Learning, Genetic Algorithms, Linear Regression.</p>
           </div>
         </div>
-        
-        <div class="col-md-6 col-lg-4 portfolio-item project" data-aos="fade-up">
-          <div class="portfolio-card shadow-sm h-100">
-            <div class="img-container"><img src="images/project-smart-urban.jpg" class="w-100" alt="Project"></div>
-            <div class="p-4">
-              <h5 class="fw-bold mb-2">Smart Urban Planner</h5>
-              <p class="small text-white-50">Optimization system using SUMO and Genetic Algorithms.</p>
-              <a href="https://github.com/Arathics/smarturbanplanner" target="_blank" class="text-primary text-decoration-none small fw-bold">GitHub Repo →</a>
-            </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="glass-box p-5 h-100">
+            <i class="bi bi-geo-fill text-success display-4 mb-4"></i>
+            <h4 class="fw-bold">GIS & Simulation</h4>
+            <p class="small opacity-50">SUMO (Simulation of Urban MObility), OSMnx, OpenStreetMap, GeoPandas, Spatial Clustering.</p>
           </div>
         </div>
-
-        <div class="col-md-6 col-lg-4 portfolio-item skill" data-aos="fade-up">
-          <div class="glass-card p-5 h-100 text-center">
-            <i class="bi bi-code-square display-5 text-info mb-3"></i>
-            <h5 class="fw-bold">Tech Stack</h5>
-            <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
-              <span class="badge border border-info text-info rounded-pill">Python</span>
-              <span class="badge border border-info text-info rounded-pill">SQL</span>
-              <span class="badge border border-info text-info rounded-pill">Java</span>
-              <span class="badge border border-info text-info rounded-pill">MERN</span>
-            </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="glass-box p-5 h-100">
+            <i class="bi bi-database text-info display-4 mb-4"></i>
+            <h4 class="fw-bold">Data & Backend</h4>
+            <p class="small opacity-50">MySQL, Oracle SQL, MERN Stack (MongoDB, Express, React, Node), Python, Java.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-5 bg-dark bg-opacity-25">
+  <section class="py-5" id="portfolio">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end mb-5" data-aos="fade-up">
+        <div>
+          <h2 class="display-4 fw-bold mb-0">Project <span class="text-primary">Catalog</span></h2>
+        </div>
+        <div class="d-flex gap-2">
+          <button class="filter-btn active" onclick="filterGrid('all')">All</button>
+          <button class="filter-btn" onclick="filterGrid('project')">Projects</button>
+          <button class="filter-btn" onclick="filterGrid('certification')">Certificates</button>
+        </div>
+      </div>
+
+      <div class="row g-4" id="p-grid">
+        <div class="col-md-6 col-lg-4 p-item project" data-aos="fade-up">
+          <div class="glass-box overflow-hidden h-100 project-card">
+            <div class="p-0"><img src="images/project-smart-urban.jpg" class="w-100" style="height: 250px; object-fit: cover;"></div>
+            <div class="p-4">
+              <h5 class="fw-bold">Smart Urban Planner</h5>
+              <p class="small opacity-50">Integrated RL with SUMO simulations. Automated traffic signal timing for 15% better flow.</p>
+              <a href="#" class="text-primary text-decoration-none small fw-bold">GitHub Repo →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 p-item project" data-aos="fade-up">
+          <div class="glass-box overflow-hidden h-100 project-card">
+            <div class="p-0"><img src="images/project-churn.png" class="w-100" style="height: 250px; object-fit: cover;"></div>
+            <div class="p-4">
+              <h5 class="fw-bold">Churn Prediction (94% Acc)</h5>
+              <p class="small opacity-50">Random Forest on 209k records. Handled massive class imbalance using SMOTE.</p>
+              <a href="#" class="text-primary text-decoration-none small fw-bold">GitHub Repo →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 p-item project" data-aos="fade-up">
+          <div class="glass-box overflow-hidden h-100 project-card">
+            <div class="p-0"><img src="images/project-flamingo.jpeg" class="w-100" style="height: 250px; object-fit: cover;"></div>
+            <div class="p-4">
+              <h5 class="fw-bold">Flamingo (MERN)</h5>
+              <p class="small opacity-50">Full-stack E-commerce for local supermarkets with urgent delivery logic.</p>
+              <a href="#" class="text-primary text-decoration-none small fw-bold">GitHub Repo →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 p-item certification" data-aos="fade-up">
+          <div class="glass-box p-4 h-100 d-flex flex-column">
+            <div class="bento-tag mb-2">Oracle University</div>
+            <h5 class="fw-bold mb-3">OCI Certified AI Foundations Associate</h5>
+            <p class="small opacity-50 mb-4">Official certification in Oracle Cloud Infrastructure AI services (2025).</p>
+            <a href="#" class="btn btn-sm btn-outline-secondary mt-auto">View Certificate</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 p-item certification" data-aos="fade-up">
+          <div class="glass-box p-4 h-100 d-flex flex-column">
+            <div class="bento-tag mb-2">University of Michigan</div>
+            <h5 class="fw-bold mb-3">Intro to SQL (Coursera)</h5>
+            <p class="small opacity-50 mb-4">Gained advanced skills in database querying and data management.</p>
+            <a href="#" class="btn btn-sm btn-outline-secondary mt-auto">View Certificate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 bg-black bg-opacity-25">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
           <h2 class="display-4 fw-bold mb-4">Common <span class="text-primary">Questions</span></h2>
-          <p class="text-white-50 lead">Insight into my research background and technical expertise.</p>
-          <img src="images/illustration-6.png" class="img-fluid opacity-50 d-none d-lg-block w-75 mt-4" alt="Illustration">
-        </div>
-        <div class="col-lg-6" data-aos="fade-left">
-          <div class="accordion accordion-flush" id="faqAccordion">
+          <div class="accordion accordion-flush" id="faqs">
             <div class="accordion-item shadow-sm">
               <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#f1">Research Specialization?</button></h2>
-              <div id="f1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-white-50">I specialize in applying Machine Learning (specifically Reinforcement Learning) to urban spatial data for infrastructure optimization.</div></div>
+              <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faqs"><div class="accordion-body opacity-75">I specialize in applying Machine Learning (specifically Reinforcement Learning) to urban spatial data for infrastructure optimization.</div></div>
             </div>
             <div class="accordion-item shadow-sm">
               <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#f2">Master's Aspirations?</button></h2>
-              <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-white-50">I am focused on pursuing a Research Master's in Artificial Intelligence in Europe, targeting scholarships like DSU and British Council Women in STEM.</div></div>
+              <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqs"><div class="accordion-body opacity-75">Targeting Research Master's in AI in Europe (DSU/British Council STEM Scholarships).</div></div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-5">
-    <div class="container" data-aos="fade-up">
-      <div class="glass-card p-5 border-primary border-opacity-25">
-        <div class="row g-5">
-          <div class="col-lg-5">
-            <h2 class="fw-bold display-4">Let's <span class="text-primary">Talk.</span></h2>
-            <p class="text-white-50 mt-4 fs-5">Kozhikode, Kerala, India<br>arathipradeep02@gmail.com</p>
-          </div>
-          <div class="col-lg-7">
+        <div class="col-lg-5 offset-lg-1" data-aos="fade-left">
+          <div class="glass-box p-5 border-primary">
+            <h3 class="fw-bold mb-4">Let's Talk.</h3>
             <form action="#" method="post">
-              <div class="row g-3">
-                <div class="col-md-6"><input type="text" class="form-control p-3 rounded-4" placeholder="Name"></div>
-                <div class="col-md-6"><input type="email" class="form-control p-3 rounded-4" placeholder="Email"></div>
-                <div class="col-12"><textarea class="form-control p-3 rounded-4" rows="4" placeholder="Your Message"></textarea></div>
-                <div class="col-12"><button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill shadow-lg">Send Message</button></div>
-              </div>
+              <input type="text" class="form-control mb-3 p-3 rounded-4" placeholder="Name">
+              <input type="email" class="form-control mb-3 p-3 rounded-4" placeholder="Email">
+              <textarea class="form-control mb-4 p-3 rounded-4" rows="3" placeholder="Message"></textarea>
+              <button class="btn btn-primary btn-lg w-100 rounded-pill">Send Inquiry</button>
             </form>
           </div>
         </div>
@@ -348,7 +294,7 @@
   </section>
 
   <footer class="py-5 text-center border-top border-white border-opacity-10 mt-5">
-    <p class="small text-white-50">© 2026 Arathi Pradeep. Built with AI & Passion.</p>
+    <p class="small opacity-50">© 2026 Arathi Pradeep. Kozhikode, Kerala.</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -356,32 +302,23 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   
   <script>
-    // Initialize AOS
     AOS.init({ once: true });
-
-    // Swiper Creative Effect
-    const swiper = new Swiper('.research-swiper', {
+    
+    new Swiper('.research-swiper', {
       loop: true,
-      grabCursor: true,
       effect: "creative",
       creativeEffect: {
         prev: { shadow: true, translate: ["-20%", 0, -1] },
         next: { translate: ["100%", 0, 0] },
       },
-      autoplay: { delay: 4500, disableOnInteraction: false },
+      autoplay: { delay: 4000 },
       pagination: { el: '.swiper-pagination', clickable: true },
     });
 
-    // Portfolio Filter Logic
-    function filterPortfolio(category) {
-      const items = document.querySelectorAll('.portfolio-item');
-      const buttons = document.querySelectorAll('.filter-btn');
-      
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      items.forEach(item => {
-        item.style.display = (category === 'all' || item.classList.contains(category)) ? 'block' : 'none';
+    function filterGrid(c) {
+      const items = document.querySelectorAll('.p-item');
+      items.forEach(i => {
+        i.style.display = (c === 'all' || i.classList.contains(c)) ? 'block' : 'none';
       });
       AOS.refresh();
     }
