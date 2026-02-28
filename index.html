@@ -832,6 +832,130 @@
   </div>
 </section>
 
+  <section class="py-5">
+  <div class="container">
+
+    <!-- Section Header -->
+<section class="py-5" style="background-color: #06090f;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-3 fw-bold text-white">Research Spotlight</h2>
+      <p class="text-primary text-uppercase ls-2 small fw-bold">Academic Milestones</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="swiper research-clean-swiper pb-5">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide h-auto">
+              <div class="card border-0 bg-dark rounded-5 overflow-hidden shadow-lg h-100">
+                <div class="row g-0 align-items-stretch">
+                  <div class="col-md-6 min-vh-25">
+                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=800" 
+                         class="img-fluid h-100 object-fit-cover w-100" alt="Smart City">
+                  </div>
+                  <div class="col-md-6 d-flex align-items-center">
+                    <div class="p-4 p-lg-5 text-white">
+                      <span class="badge bg-primary rounded-pill mb-3 px-3">IEEE Publication</span>
+                      <h2 class="fw-bold mb-3">Smart Urban Planning</h2>
+                      <p class="text-secondary mb-4" style="line-height: 1.6;">
+                        Published research on optimizing traffic flow and energy using <strong>Reinforcement Learning</strong> and <strong>GIS</strong> frameworks.
+                      </p>
+                      <div class="d-flex flex-wrap gap-2">
+                        <span class="badge border border-secondary text-secondary small">Python</span>
+                        <span class="badge border border-secondary text-secondary small">SUMO</span>
+                        <span class="badge border border-secondary text-secondary small">GIS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide h-auto">
+              <div class="card border-0 bg-dark rounded-5 overflow-hidden shadow-lg h-100">
+                <div class="row g-0 align-items-stretch">
+                  <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" 
+                         class="img-fluid h-100 object-fit-cover w-100" alt="Data Science">
+                  </div>
+                  <div class="col-md-6 d-flex align-items-center">
+                    <div class="p-4 p-lg-5 text-white">
+                      <span class="badge bg-success rounded-pill mb-3 px-3">Industry Impact</span>
+                      <h2 class="fw-bold mb-3">Data Science Intern</h2>
+                      <p class="text-secondary mb-4" style="line-height: 1.6;">
+                        Engineered predictive models with <strong>94% accuracy</strong> for large-scale telecom datasets using Random Forest algorithms.
+                      </p>
+                      <div class="pt-2 border-top border-secondary mt-3">
+                        <small class="text-info fw-bold">Main Flow Services & Technologies</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide h-auto">
+              <div class="card border-0 bg-dark rounded-5 overflow-hidden shadow-lg h-100">
+                <div class="row g-0 align-items-stretch">
+                  <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=800" 
+                         class="img-fluid h-100 object-fit-cover w-100" alt="Programming">
+                  </div>
+                  <div class="col-md-6 d-flex align-items-center">
+                    <div class="p-4 p-lg-5 text-white">
+                      <span class="badge bg-warning text-dark rounded-pill mb-3 px-3">Elite Designation</span>
+                      <h2 class="fw-bold mb-3">Python for Data Science</h2>
+                      <p class="text-secondary mb-4" style="line-height: 1.6;">
+                        Recognized as an <strong>Elite performer</strong> by IIT Madras (NPTEL) for advanced mastery in Python and algorithmic logic.
+                      </p>
+                      <i class="bi bi-award text-warning fs-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination research-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .research-clean-swiper .swiper-slide {
+    opacity: 0 !important;
+    transition: opacity 0.5s ease;
+  }
+  .research-clean-swiper .swiper-slide-active {
+    opacity: 1 !important;
+  }
+  .research-pagination .swiper-pagination-bullet {
+    background: #0d6efd !important;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const researchSwiper = new Swiper('.research-clean-swiper', {
+      loop: true,
+      autoHeight: true, // Prevents text from being cut off
+      spaceBetween: 30,
+      effect: "fade", // Using fade instead of creative to prevent text mixing
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.research-pagination',
+        clickable: true,
+      },
+    });
+  });
+</script>
 <!-- ================= FAQs ================= -->
 <section>
   <div class="container">
@@ -959,130 +1083,6 @@
 </section>
 
 
-  <section class="py-5">
-  <div class="container">
-
-    <!-- Section Header -->
-<section class="py-5" style="background-color: #06090f;">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="display-3 fw-bold text-white">Research Spotlight</h2>
-      <p class="text-primary text-uppercase ls-2 small fw-bold">Academic Milestones</p>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <div class="swiper research-clean-swiper pb-5">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide h-auto">
-              <div class="card border-0 bg-dark rounded-5 overflow-hidden shadow-lg h-100">
-                <div class="row g-0 align-items-stretch">
-                  <div class="col-md-6 min-vh-25">
-                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=800" 
-                         class="img-fluid h-100 object-fit-cover w-100" alt="Smart City">
-                  </div>
-                  <div class="col-md-6 d-flex align-items-center">
-                    <div class="p-4 p-lg-5 text-white">
-                      <span class="badge bg-primary rounded-pill mb-3 px-3">IEEE Publication</span>
-                      <h2 class="fw-bold mb-3">Smart Urban Planning</h2>
-                      <p class="text-secondary mb-4" style="line-height: 1.6;">
-                        Published research on optimizing traffic flow and energy using <strong>Reinforcement Learning</strong> and <strong>GIS</strong> frameworks.
-                      </p>
-                      <div class="d-flex flex-wrap gap-2">
-                        <span class="badge border border-secondary text-secondary small">Python</span>
-                        <span class="badge border border-secondary text-secondary small">SUMO</span>
-                        <span class="badge border border-secondary text-secondary small">GIS</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide h-auto">
-              <div class="card border-0 bg-dark rounded-5 overflow-hidden shadow-lg h-100">
-                <div class="row g-0 align-items-stretch">
-                  <div class="col-md-6">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" 
-                         class="img-fluid h-100 object-fit-cover w-100" alt="Data Science">
-                  </div>
-                  <div class="col-md-6 d-flex align-items-center">
-                    <div class="p-4 p-lg-5 text-white">
-                      <span class="badge bg-success rounded-pill mb-3 px-3">Industry Impact</span>
-                      <h2 class="fw-bold mb-3">Data Science Intern</h2>
-                      <p class="text-secondary mb-4" style="line-height: 1.6;">
-                        Engineered predictive models with <strong>94% accuracy</strong> for large-scale telecom datasets using Random Forest algorithms.
-                      </p>
-                      <div class="pt-2 border-top border-secondary mt-3">
-                        <small class="text-info fw-bold">Main Flow Services & Technologies</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide h-auto">
-              <div class="card border-0 bg-dark rounded-5 overflow-hidden shadow-lg h-100">
-                <div class="row g-0 align-items-stretch">
-                  <div class="col-md-6">
-                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=800" 
-                         class="img-fluid h-100 object-fit-cover w-100" alt="Programming">
-                  </div>
-                  <div class="col-md-6 d-flex align-items-center">
-                    <div class="p-4 p-lg-5 text-white">
-                      <span class="badge bg-warning text-dark rounded-pill mb-3 px-3">Elite Designation</span>
-                      <h2 class="fw-bold mb-3">Python for Data Science</h2>
-                      <p class="text-secondary mb-4" style="line-height: 1.6;">
-                        Recognized as an <strong>Elite performer</strong> by IIT Madras (NPTEL) for advanced mastery in Python and algorithmic logic.
-                      </p>
-                      <i class="bi bi-award text-warning fs-1"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-pagination research-pagination"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-  .research-clean-swiper .swiper-slide {
-    opacity: 0 !important;
-    transition: opacity 0.5s ease;
-  }
-  .research-clean-swiper .swiper-slide-active {
-    opacity: 1 !important;
-  }
-  .research-pagination .swiper-pagination-bullet {
-    background: #0d6efd !important;
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const researchSwiper = new Swiper('.research-clean-swiper', {
-      loop: true,
-      autoHeight: true, // Prevents text from being cut off
-      spaceBetween: 30,
-      effect: "fade", // Using fade instead of creative to prevent text mixing
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.research-pagination',
-        clickable: true,
-      },
-    });
-  });
-</script>
     <!-- CTA -->
     <div class="text-center">
       <a href="blog.html"
@@ -1260,6 +1260,7 @@
 </body>
 
 </html>
+
 
 
 
